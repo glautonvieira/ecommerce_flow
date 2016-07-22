@@ -1,0 +1,10 @@
+test: &default
+  url: http://www.pontofrio.com.br
+  email: <%= ENV['EMAIL'] %>
+  pass: <%= ENV['PASSWORD'] %>
+
+development:
+  <<: *default
+
+production:
+  <<: *default
