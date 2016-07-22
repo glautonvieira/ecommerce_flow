@@ -10,16 +10,15 @@ Sample run
 -------------------
 
   # running with selenium in browser
-  IN_BROWSER=true bundle exec cucumber features/ EMAIL=email PASSWORD=your_password
+  IN_BROWSER=true bundle exec cucumber features/pontofrio/search_product.feature EMAIL=email PASSWORD=your_password
 
 
   # running with poltergeist
-  bundle exec cucumber features/ EMAIL=your_email PASSWORD=your_password
+  bundle exec cucumber features/pontofrio/search_product.feature EMAIL=your_email PASSWORD=your_password
 
 
 License
 -------
 
 [MIT License](LICENSE)
-# test_youse
 # ecommerce_flow

@@ -12,12 +12,12 @@ Then(/^I see the search results$/) do
   expect(result_search_page.result_search).to eq("Você buscou por pneu.")
 end
 
-When(/^I select the first item of the list$/) do
-  result_search_page.select_product
+When(/^I select the item "([^"]*)" of the list$/) do |product_num|
+  @product = result_search_page.select_product(product_num)
 end
 
 Then(/^I see the details of the selected product page$/) do
-  expect(product_detail_page.text_product).to eq('Pneu Aro 13 Altimax General Tire RT 175/70 R13 82T')
+  expect(product_detail_page.text_product).to eq(@product)
 end
 
 When(/^I add product to cart$/) do
@@ -29,7 +29,7 @@ Then(/^I check if the product has been added to the cart$/) do
   cart_page.click_finalize_buy
   visit 'http://pontofrio.com.br'
   home_page.click_go_to_cart
-  expect(my_cart_page.text_product_cart).to eq('Pneu Aro 13 Altimax General Tire RT 175/70 R13 82T General Tire Vendido e entregue por Pontofrio')
+  expect(my_cart_page.text_product_cart).to eq(@product)
 end
 
 When(/^I inform login$/) do

@@ -4,7 +4,7 @@ Scenario: Search and buy a product
   Given I access the Pontofrio.com.br
    When I search for "pneu"
    Then I see the search results
-   When I select the first item of the list
+   When I select the item "1" of the list
    Then I see the details of the selected product page
    When I add product to cart
    Then I check if the product has been added to the cart
