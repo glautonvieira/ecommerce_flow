@@ -1,7 +1,8 @@
 Install
 -------------------
 
-Ruby 2.2.2
+Ruby >= 2.3.0
+
 PhantomJS
 
 bundle install
